@@ -37,10 +37,16 @@ namespace Calculadora
                 "\n 4.Multiplicar"                +
                 "\n 5.Potência"                   +
                 "\n 6.Raiz"                       +
-                "\n 8.Tabuada"                    +
+                "\n 7.Tabuada"                    +
+                "\n 8.Decimal Para Binario"       +
+                "\n 9.Binario Para Decimal"       +
+                "\n 10.Bhaskara"                  +
+                "\n 11.Decimal para Hexadecimal"  +
+                "\n 12.Hexadecimal para Decimal"  +
                 "\n 0. Sair"                      +
                 "\n\n Escolha uma das alternativas acima: ");
-            
+                
+
             int opcao = Convert.ToInt32(Console.ReadLine());
             return opcao;
         }//Fim do Método Menu
@@ -48,19 +54,20 @@ namespace Calculadora
 
         public void Operacao()
         {
-
+            
             int opcao = 0;
             do
             {
 
                 opcao = Menu();
-
+                Console.Clear();
 
 
                 switch (opcao)
                 {
 
                     case 0:
+
                         Console.WriteLine("Obrigado");
                         break;
                     case 1:
@@ -104,9 +111,27 @@ namespace Calculadora
                         Console.WriteLine(this.calculadora.TabuadaNum1());
                         break;
                     case 8:
-                        Console.WriteLine("Informe um Número");
+                        Console.WriteLine("Informe um Número: ");
                         int n = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine(this.calculadora.DecimalParaBinario(n));
+                        break;
+                    case 9:
+                        Console.WriteLine("Informe um Número");
+                        n = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.calculadora.BinarioParaDecimal(n));
+                        break;
+                    case 10:
+                        Coletar();
+                        Console.WriteLine("Informe um terceiro Número");
+                        double num = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine(this.calculadora.Bhaskara(num));
+                        break;
+                    case 11:
+                        Console.WriteLine(this.calculadora.DecimalParaHexa());
+                        break; 
+                    case 12:
+                        Console.WriteLine("Informe um valor em Hexadecimal: ");
+                        Console.WriteLine(this.calculadora.ConverterHexaDecimal(Console.ReadLine()));
                         break;
                     default:
                         Console.WriteLine("─►Opção escolhida não é valida");
