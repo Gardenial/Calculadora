@@ -128,7 +128,7 @@ namespace Calculadora
         } //Fim do Método DecimalParaBinario
 
 
-        public string BinarioParaDecimal(int n)
+        public int BinarioParaDecimal(int n)
         {
             //Conversão Binario em Decimal
             int dec = 0;
@@ -140,7 +140,7 @@ namespace Calculadora
                 basenum *= 2;
                 n /= 10;
             }//Fim do While
-            return dec.ToString();
+            return dec;
         }//Fim do Método BinarioParaDecimal
 
         public string Bhaskara(double num) 
@@ -173,7 +173,7 @@ namespace Calculadora
 
         }// Fim do Método 
 
-        public string DecimalParaHexa()
+        public string DecimalParaHexa(int dec)
         {
             int num_decimal = 0;
             string num_hexadecimal;
@@ -181,7 +181,7 @@ namespace Calculadora
 
 
             Console.WriteLine("Informe um numero em decimal : ");
-            num_decimal = int.Parse(Console.ReadLine());
+            num_decimal = dec;
 
 
 
@@ -228,6 +228,15 @@ namespace Calculadora
             }//fim do for
             return dec;
         }//fim do método converter Hexa para Decimal
+
+        public string BinParaHexa(int bin)
+        {
+            int dec = BinarioParaDecimal(bin);
+            string hex = DecimalParaHexa(dec);
+
+            return hex;
+
+        }//Fim do Método HexaParaBin
 
     }//Fim da classe
 }//Fim do projeto

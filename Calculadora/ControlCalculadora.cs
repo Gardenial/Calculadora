@@ -43,6 +43,7 @@ namespace Calculadora
                 "\n 10.Bhaskara"                  +
                 "\n 11.Decimal para Hexadecimal"  +
                 "\n 12.Hexadecimal para Decimal"  +
+                "\n 13.Binário para Hexadecimal"  +
                 "\n 0. Sair"                      +
                 "\n\n Escolha uma das alternativas acima: ");
                 
@@ -127,11 +128,17 @@ namespace Calculadora
                         Console.WriteLine(this.calculadora.Bhaskara(num));
                         break;
                     case 11:
-                        Console.WriteLine(this.calculadora.DecimalParaHexa());
+                        int dec = 0;
+                        Console.WriteLine(this.calculadora.DecimalParaHexa(dec));
                         break; 
                     case 12:
                         Console.WriteLine("Informe um valor em Hexadecimal: ");
                         Console.WriteLine(this.calculadora.ConverterHexaDecimal(Console.ReadLine()));
+                        break;
+                    case 13:
+                        Console.WriteLine("Informe um valor Binário");
+                        int bin = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.calculadora.BinParaHexa(bin));
                         break;
                     default:
                         Console.WriteLine("─►Opção escolhida não é valida");
